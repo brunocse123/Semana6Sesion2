@@ -1,0 +1,54 @@
+body {
+  height: 80;
+}
+
+/*
+@mixin color($color) {
+  @if ($color == primary) {
+    color: map-get($colors, primary);
+  }
+}
+*/
+p {
+  font-size: 12px;
+}
+
+header p {
+  font-size: 20px;
+  font-size: 15px;
+}
+
+.button:hover {
+  color: red;
+}
+
+a:hover {
+  color: green;
+}
+
+@media (max-width: 680px) {
+  h2 {
+    color: orange;
+  }
+}
+
+.f-size {
+  font-size: 40px;
+}
+
+.f-size {
+  font-size: 50px;
+}
+
+.f-size {
+  font-size: 60px;
+}
+
+.f-size {
+  font-size: 70px;
+}
+
+.f-size {
+  font-size: 80px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,114 @@
+body {
+  height: 40 * (2);
+}
+
+$small: 13px;
+$large: 15px;
+
+@mixin size-p($size) {
+  font-size: $size;
+}
+
+//Small 13
+@mixin titles-size($size) {
+  @if ($size == large) {
+    font-size: $large;
+  }
+
+  @if ($size == small) {
+    font-size: $small;
+  }
+}
+
+$color: (
+  primary: red,
+  secundary: white,
+  contraste: black,
+);
+
+/*
+@mixin color($color) {
+  @if ($color == primary) {
+    color: map-get($colors, primary);
+  }
+}
+*/
+
+p {
+  @include size-p(12px);
+  //@include color(primary);
+}
+
+header p {
+  @include size-p(20px);
+  @include titles-size(large);
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin brekpoints($brekpoint) {
+  @if ($brekpoint == small) {
+    @media (max-width: 680px) {
+      @content;
+    }
+  }
+
+  @else if ($brekpoint == large) {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+.button {
+  @include hover {
+    color: red;
+  }
+}
+
+a {
+  @include hover {
+    color: green;
+  }
+}
+
+
+body{
+    @include brekpoints(medium){
+        color: green;
+    }
+}
+
+
+h2{
+    @include brekpoints(small){
+        color: orange;
+    }
+}
+
+
+$sizes: 40, 50, 60, 70, 80;
+
+@each $size in $sizes {
+    .f-size{
+        font-size: $size#{px}
+    }
+}
+
+$colors-branding:(
+    primary1: pink,
+    secondary: red,
+    complementary: green,
+);
+
+$colors-semantic:(
+    warning: orange,
+    primary: blue,
+    danger: red,
+)
+
+
